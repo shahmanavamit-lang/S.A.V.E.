@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.A.V.E. | Emergency Routing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="mc-dashboard">
+        <aside class="mc-sidebar mc-block-stone">
+            <div class="brand" style="position: relative; margin-bottom: 20px;">
+                <a href="#" onclick="flipTo('about.html')" class="info-icon" title="Project Info">i</a>
+                <h2 class="mc-title">S.A.V.E.</h2>
+                <p class="mc-subtitle" style="font-size: 7px; color: #aaa; margin: 0;">Developed by Shah Manav Amit</p>
+            </div>
+
+            <div class="dispatch-details mc-block-wood">
+                <h3 class="wood-title">1. Triage Level</h3>
+                <select id="priority-select" class="mc-input">
+                    <option value="1">Critical (Priority 1)</option>
+                    <option value="2">Standard (Priority 2)</option>
+                </select>
+                <p class="helper-text">Select level, then click a node to deploy.</p>
+            </div>
+
+            <div class="dispatch-details mc-block-dark" style="margin-top: 15px;">
+                <h3 class="wood-title">Fleet Status</h3>
+                <div id="active-units-list">
+                    <span class="text-green">All units idle at Base.</span>
+                </div>
+            </div>
+
+            <div class="dispatch-details mc-block-dirt" style="margin-top: 15px;">
+                <h3 class="wood-title text-white">Network Control</h3>
+                <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;">
+                    <select id="block-u" class="mc-input">
+                        <option value="none" selected disabled>Block From...</option>
+                    </select>
+                    <select id="block-v" class="mc-input">
+                        <option value="none" selected disabled>Block To...</option>
+                    </select>
+                </div>
+                <button class="mc-btn btn-danger" onclick="executeBlockRoad()">Block Road</button>
+                <button class="mc-btn" onclick="resetSystem()" style="margin-top: 10px;">Recall All Units</button>
+            </div>
+        </aside>
+
+        <main class="map-view mc-block-stone-slab">
+            <!-- REPLACED TEXT HEADER WITH PULSING ANIMATION BAR -->
+            <div class="map-pulse-header"></div>
+            <div class="map-container" id="mapContainer">
+                <canvas id="roadCanvas" width="900" height="650"></canvas>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <script>
+        function flipTo(url) {
+            document.body.classList.add('flip-out');
+            setTimeout(() => { window.location.href = url; }, 400);
+        }
+    </script>
+</body>
+</html>

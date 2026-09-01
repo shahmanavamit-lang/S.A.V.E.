@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.A.V.E. | About the Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- Added animated-grid class for the slow-moving background -->
+<body class="map-container animated-grid" style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+
+    <div class="mc-block-stone about-container">
+        <!-- Header: Delay 1 -->
+        <div class="fade-up delay-1" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid #333; padding-bottom: 15px; margin-bottom: 25px;">
+            <h2 class="type-cursor" style="margin: 0; font-size: 16px; text-shadow: 2px 2px 0 #000;">Project Documentation</h2>
+            <a href="#" onclick="flipTo('index.html')" class="mc-btn" style="width: auto; margin: 0; padding: 8px 12px; box-shadow: 2px 2px 0 #000;">X Return</a>
+        </div>
+
+        <!-- Paragraph 1: Delay 2 -->
+        <p class="about-text fade-up delay-2">
+            <strong>S.A.V.E. (Smart Ambulance Vectoring Engine)</strong> is an advanced Emergency Routing System. It dynamically calculates optimal transit paths for medical dispatches, featuring real-time road blockage handling, multi-unit fleet management, and a dynamic triage system that can preemptively hijack units for critical emergencies.
+        </p>
+        
+        <!-- Paragraph 2: Delay 3 -->
+        <p class="about-text fade-up delay-3">
+            Developed by <strong>Shah Manav Amit</strong>. The system's backend is engineered entirely using fundamental C++ data structures. It deliberately avoids standard template libraries (STL) to explicitly demonstrate the core mechanics of memory allocation, array-based queues, and graph traversal.
+        </p>
+
+        <!-- Tables: Delay 4 -->
+        <div class="fade-up delay-4" style="display: flex; gap: 20px; margin-top: 35px;">
+            <div style="flex: 1;">
+                <h3 style="font-size: 10px; color: #f1c40f; text-shadow: 1px 1px 0 #000; margin-bottom: 12px;">Data Structures</h3>
+                <table class="mc-table interactive-table">
+                    <tr><th>Structure</th><th>Implementation Use Case</th></tr>
+                    <tr><td>2D Array</td><td>Adjacency Matrix for map representation</td></tr>
+                    <tr><td>1D Arrays</td><td>Distance tracking & Parent node pathing</td></tr>
+                    <tr><td>Queue</td><td>Array-based holding queue for fleet assets</td></tr>
+                    <tr><td>Priority Queue</td><td>Triage sorting for critical emergencies</td></tr>
+                </table>
+            </div>
+
+            <div style="flex: 1;">
+                <h3 style="font-size: 10px; color: #f1c40f; text-shadow: 1px 1px 0 #000; margin-bottom: 12px;">Algorithms</h3>
+                <table class="mc-table interactive-table">
+                    <tr><th>Algorithm</th><th>Implementation Use Case</th></tr>
+                    <tr><td>Dijkstra's Algorithm</td><td>Finds the absolute shortest path across the weighted map.</td></tr>
+                    <tr><td>Greedy Search</td><td>Selects the minimum distance node iteratively during traversal.</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function flipTo(url) {
+            document.body.classList.add('flip-out');
+            setTimeout(() => { window.location.href = url; }, 400);
+        }
+    </script>
+</body>
+</html>
